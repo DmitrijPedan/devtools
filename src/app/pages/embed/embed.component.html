@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="panel">
+        <div class="form-item input">
+          <input type="text" [(ngModel)]="inputValue" placeholder="Insert code here" id="inputCode">
+          <label for="inputCode">Insert your embed code</label>
+        </div>
+        <div class="buttons right">
+          <button class="btn primary-btn" title="{{!inputValue ? 'Please add some html code to input' : 'Insert'}}"
+                  (click)="insert()" [disabled]="!inputValue"
+          >Apply</button>
+          <button class="btn warning-btn"
+                  (click)="clear()"
+          >Clear</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="output">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="subtitle">Result</h2>
+      </div>
+      <div class="col-12">
+        <div class="form-item">
+          <input type="range" min="100" max="1900" id="range" [(ngModel)]="containerWidth">
+          <label for="range">Container width ({{containerWidth}}px)</label>
+        </div>
+        <div class="form-checkboxes">
+          <div class="form-item checkbox">
+            <input type="color" id="color" [(ngModel)]="containerBackground">
+            <label for="color">Container background</label>
+          </div>
+          <div class="form-item checkbox">
+            <input type="checkbox" id="padding" [(ngModel)]="containerPadding">
+            <label for="padding">Container padding</label>
+          </div>
+          <div class="form-item checkbox">
+            <input type="checkbox" id="border" [(ngModel)]="embedBorder">
+            <label for="border">Embed component border</label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container output-container"
+       [ngStyle]="{maxWidth: containerWidth + 'px', backgroundColor: containerBackground}" [ngClass]="{padding: containerPadding}" >
+      <div class="embed-box" [ngClass]="{border: embedBorder}" [innerHTML]="html"></div>
+  </div>
+
+</div>

@@ -1,0 +1,30 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+header {
+  background-color: var(--background-color);
+  position: sticky;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid var(--border-color);
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  z-index: 2000;
+
+  .logo {
+    font-size: 24px;
+    font-family: 'Fredoka One', cursive;
+    color: var(--logo-color);
+  }
+
+  @include media-breakpoint-down(sm) {
+    .logo {
+      font-size: 20px;
+    }
+  }
+}
+
+
+

@@ -1,0 +1,22 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+footer {
+  background-color: var(--background-color);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+
+  .copy {
+    text-align: center;
+    font-size: 12px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    .copy {
+      font-size: 10px;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="section">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="title">Select your tool</h1>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="tools">
+        <div class="tool" *ngFor="let tool of tools">
+          <a routerLink="{{tool.link}}">
+            <div class="content">
+              <p class="icon"><fa-icon [icon]="tool.icon" [styles]="{color: 'var(--primary-color)'}" ></fa-icon></p>
+              <p class="name">{{tool.name}}</p>
+              <p class="description">{{tool.description}}</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
