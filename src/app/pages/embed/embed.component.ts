@@ -21,6 +21,7 @@ export class EmbedPageComponent implements OnInit {
   public containerPadding = true;
   public containerBackground = '#ffffff';
   public embedBorder = false;
+  public embedCenter = false;
 
   ngOnInit(): void {
     this.document.setTitle('Embed codes');

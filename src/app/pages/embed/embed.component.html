@@ -42,7 +42,11 @@
           </div>
           <div class="form-item checkbox">
             <input type="checkbox" id="border" [(ngModel)]="embedBorder">
-            <label for="border">Embed component border</label>
+            <label for="border">Embed box border</label>
+          </div>
+          <div class="form-item checkbox">
+            <input type="checkbox" id="centered" [(ngModel)]="embedCenter">
+            <label for="centered">Embed box centered</label>
           </div>
         </div>
 
@@ -52,7 +56,9 @@
 
   <div class="container output-container"
        [ngStyle]="{maxWidth: containerWidth + 'px', backgroundColor: containerBackground}" [ngClass]="{padding: containerPadding}" >
-      <div class="embed-box" [ngClass]="{border: embedBorder}" [innerHTML]="html"></div>
+      <div class="embed-box">
+        <p class="embed-component" [ngClass]="{centered: embedCenter, border: embedBorder}" [innerHTML]="html"></p>
+      </div>
   </div>
 
 </div>
